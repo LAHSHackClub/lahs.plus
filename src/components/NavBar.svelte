@@ -1,4 +1,5 @@
 <script>
+	import DarkToggle from '../components/DarkToggle.svelte';
 	const NavItems = [
 		{
 			name: 'Home',
@@ -29,15 +30,6 @@
 			href: '/about'
 		}
 	];
-	function darkToggle() {
-		if (localStorage.getItem('theme') === 'dark') {
-			localStorage.setItem('theme', 'light');
-			document.documentElement.setAttribute('data-theme', 'light');
-		} else {
-			localStorage.setItem('theme', 'dark');
-			document.documentElement.setAttribute('data-theme', 'dark');
-		}
-	}
 </script>
 
 <nav>
@@ -45,7 +37,7 @@
 		{#each NavItems as item}
 			<a class="navbar-link" href={item.href}> {item.name}</a>
 		{/each}
-		<button class="navbar-link ml-auto" on:click={darkToggle}>Dark Mode</button>
+		<DarkToggle />
 	</div>
 </nav>
 

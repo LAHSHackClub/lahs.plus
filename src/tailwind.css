@@ -1,11 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer base {
+	.dark {
+		@apply bg-gray-800 text-white transition-all duration-100 ease-linear;
+	}
+	.light {
+		@apply bg-gray-200 text-gray-800 transition-all duration-100 ease-linear;
+	}
+}
 .navbar {
-	@apply bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
+	@apply bg-lahs-blue border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
 }
 
 .navbar-link {
-	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5 dark:text-gray-500 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
+	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5 dark:text-gray-200 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
 }
