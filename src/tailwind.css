@@ -7,5 +7,5 @@
 }
 
 .navbar-link {
-	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-xl text-center hover:shadow-lg p-5  text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
+	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5  text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
 }

@@ -4,9 +4,10 @@
 
 <div class=" mx-auto ">
 	<div class="flex flex-wrap">
-		<div class="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-5">
+		<div class="mt-4 bg-white border-2 border-gray-300 rounded-lg shadow-lg p-5">
 			<h2 class="text-2xl font-semibold">Welcome to lahs.plus</h2>
 		</div>
+		<div />
 	</div>
 </div>
 

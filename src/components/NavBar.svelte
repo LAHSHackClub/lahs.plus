@@ -22,7 +22,7 @@
 		},
 		{
 			name: 'Resources',
-			href: '/calendar'
+			href: '/resources'
 		},
 		{
 			name: 'About',
@@ -33,11 +33,9 @@
 
 <nav>
 	<div class="navbar ">
-		<div class="">
-			{#each NavItems as item}
-				<a class="navbar-link" href={item.href}> {item.name}</a>
-			{/each}
-		</div>
+		{#each NavItems as item}
+			<a class="navbar-link" href={item.href}> {item.name}</a>
+		{/each}
 	</div>
 </nav>
 
