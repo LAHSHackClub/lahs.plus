@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .navbar {
-	@apply bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0;
+	@apply bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
 }
 
 .navbar-link {
