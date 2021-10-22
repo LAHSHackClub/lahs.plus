@@ -12,28 +12,12 @@
 </script>
 
 <nav>
-	<div class="navbar">
+	<div class=" bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0 ">
 		{#each NavItems as item}
-			<li class="navbar-item">
-				<a class="navbar-link" href={item.href}> {item.name}</a>
-			</li>
+			<a class=" pl-2 mr-2 text-white font-semibold" href={item.href}> {item.name}</a>
 		{/each}
 	</div>
 </nav>
 
 <style>
-	.navbar {
-		background-color: antiquewhite;
-		overflow: hidden;
-	}
-	.navbar-item {
-		width: 100%;
-		justify-content: space-between;
-		margin: 0;
-		padding: 0 40px;
-	}
-	.navbar-link {
-		text-decoration: none;
-		color: black;
-	}
 </style>
