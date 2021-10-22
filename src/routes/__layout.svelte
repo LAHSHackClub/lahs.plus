@@ -5,7 +5,6 @@
 
 <NavBar />
 <slot />
-
 <Footer />
 
 <style global lang="postcss">
