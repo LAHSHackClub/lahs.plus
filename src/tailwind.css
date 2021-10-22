@@ -5,3 +5,7 @@
 .navbar {
 	@apply bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0;
 }
+
+.navbar-link {
+	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-xl text-center hover:shadow-lg p-5  text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
+}

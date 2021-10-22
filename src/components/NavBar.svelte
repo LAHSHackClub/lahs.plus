@@ -33,9 +33,11 @@
 
 <nav>
 	<div class="navbar ">
-		{#each NavItems as item}
-			<a class=" pl-2 mr-2 text-white font-semibold" href={item.href}> {item.name}</a>
-		{/each}
+		<div class="">
+			{#each NavItems as item}
+				<a class="navbar-link" href={item.href}> {item.name}</a>
+			{/each}
+		</div>
 	</div>
 </nav>
 
