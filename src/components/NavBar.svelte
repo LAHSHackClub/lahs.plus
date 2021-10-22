@@ -7,6 +7,26 @@
 		{
 			name: 'Map',
 			href: '/map'
+		},
+		{
+			name: 'News',
+			href: '/news'
+		},
+		{
+			name: 'Calendar',
+			href: '/calendar'
+		},
+		{
+			name: 'Clubs',
+			href: '/clubs'
+		},
+		{
+			name: 'Resources',
+			href: '/calendar'
+		},
+		{
+			name: 'About',
+			href: '/about'
 		}
 	];
 </script>

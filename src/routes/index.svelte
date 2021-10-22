@@ -1,5 +1,4 @@
 <script>
-	import NavBar from '../components/NavBar.svelte';
 	import '../tailwind.css';
 </script>
 
