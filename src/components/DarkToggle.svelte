@@ -1,7 +1,4 @@
 <script lang="ts" context="module">
-	import { onMount } from 'svelte';
-	let ready = false;
-
 	function darkToggle() {
 		if (localStorage.getItem('dark') == 'true') {
 			localStorage.setItem('dark', 'false');
@@ -18,7 +15,5 @@
 		}
 	}
 </script>
-
-import {onMount} from 'svelte';
 
 <button class="navbar-link ml-auto " on:click={darkToggle}>Toggle Theme</button>
