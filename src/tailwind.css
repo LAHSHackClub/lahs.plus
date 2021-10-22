@@ -10,7 +10,7 @@
 	}
 }
 .navbar {
-	@apply bg-lahs-blue border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
+	@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
 }
 
 .navbar-link {
