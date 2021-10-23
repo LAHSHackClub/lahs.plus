@@ -1,4 +1,6 @@
 <script>
+	// set css to light theme
+
 	import NavBar from '../components/NavBar.svelte';
 	import Footer from '../components/Footer.svelte';
 </script>
