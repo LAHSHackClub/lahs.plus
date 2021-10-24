@@ -30,6 +30,7 @@
   },
   "type": "module",
   "dependencies": {
-    "sass": "^1.43.3"
+    "sass": "^1.43.3",
+    "svelte-local-storage-store": "^0.2.4"
   }
 }
