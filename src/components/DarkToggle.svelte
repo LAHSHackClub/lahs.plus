@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
 	export const preferences = writable('preferences', {
-		theme: 'dark'
+		theme: 'light'
 	});
 	export const theme = get(preferences);
 	onMount(() => {
