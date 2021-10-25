@@ -8,7 +8,7 @@ module.exports = {
 			white: colors.white,
 			gray: colors.warmGray,
 			'svelte-prime': '#ff5030',
-			'lahs-blue': '#1565c0'
+			'lahs-blue': '#1565c0',
 		}
 	},
 	variants: {

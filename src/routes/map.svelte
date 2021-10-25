@@ -1,1 +1,1 @@
-<div>Temporary</div>
+<div>School Map</div>
