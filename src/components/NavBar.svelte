@@ -1,6 +1,5 @@
 <script>
 	import DarkToggle from '../components/DarkToggle.svelte';
-	import MobileNav from './MobileNav.svelte';
 	export const NavItems = [
 		{
 			name: 'Home',
@@ -34,7 +33,6 @@
 </script>
 
 <nav>
-	<!-- if not mobile render  -->
 	<div class="navbar">
 		{#each NavItems as item}
 			<a class="navbar-link" href={item.href}> {item.name}</a>
