@@ -2,23 +2,25 @@
 	import { writable } from 'svelte-local-storage-store';
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
+	import { update_await_block_branch } from 'svelte/internal';
 	export const preferences = writable('preferences', {
 		theme: 'light'
 	});
-	export const theme = get(preferences);
 	onMount(() => {
 		preferences.subscribe((preferences) => {
 			document.body.classList.remove('light', 'dark');
 			document.body.classList.add(`${preferences.theme}`);
 		});
 	});
+	const theme = get(preferences).theme;
 </script>
 
 <button
 	class="navbar-link ml-auto "
 	on:click={() =>
 		preferences.update((preferences) => ({
-			theme: preferences.theme === 'dark' ? 'light' : 'dark'
+			...preferences,
+			theme: preferences.theme === 'light' ? 'dark' : 'light'
 		}))}
 >
 	<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

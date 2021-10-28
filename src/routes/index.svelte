@@ -1,8 +1,6 @@
 <script>
 	import '../tailwind.css';
 	let phone = 'temp';
-
-	//set local storage var for dark mode called theme'
 </script>
 
 <div class=" mx-auto   ">
