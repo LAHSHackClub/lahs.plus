@@ -31,8 +31,8 @@
 </div>
 
 <style lang="css">
-	/* .dropdown{
+	.dropdown{
 		display: none;
 	}
-	.phone:hover .dropdown {display: block;} */
+	.phone:hover .dropdown {display: block;}
 </style>
