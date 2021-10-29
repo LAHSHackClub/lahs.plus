@@ -4,11 +4,6 @@
 	import MobileSidebar from '../components/MobileSidebar.svelte';
 	import { onMount } from 'svelte';
 	import { mobile } from '../utils/media';
-	function openSidebar() {
-		const content = document.getElementById('content');
-		content.scrollBy(-260, 0);
-		content.style.scrollBehavior = 'smooth';
-	}
 	onMount(() => {
 		console.log(screen);
 		console.log(mobile);

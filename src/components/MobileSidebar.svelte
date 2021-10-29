@@ -35,7 +35,6 @@
 			<a href={item.href} class="flex flex-col p-1 font-semibold ">{item.name}</a>
 		{/each}
 	</div>
-	<button class="navbar-link" on:click={closeSidebar}>Close Sidebar with JS</button>
 </div>
 
 <style lang="scss">

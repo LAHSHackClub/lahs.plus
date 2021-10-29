@@ -26,5 +26,9 @@ export const NavItems = [
 	{
 		name: 'About',
 		href: '/about'
+	},
+	{
+		name: 'Contact',
+		href: '/contact'
 	}
 ];

@@ -1,35 +1,6 @@
 <script>
 	import DarkToggle from '../components/DarkToggle.svelte';
-	export const NavItems = [
-		{
-			name: 'Home',
-			href: '/'
-		},
-		{
-			name: 'Map',
-			href: '/map'
-		},
-		{
-			name: 'News',
-			href: '/news'
-		},
-		{
-			name: 'Calendar',
-			href: '/calendar'
-		},
-		{
-			name: 'Clubs',
-			href: '/clubs'
-		},
-		{
-			name: 'Resources',
-			href: '/resources'
-		},
-		{
-			name: 'About',
-			href: '/about'
-		}
-	];
+	import { NavItems } from './NavItems';
 </script>
 
 <nav>
