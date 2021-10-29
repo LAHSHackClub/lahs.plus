@@ -3,21 +3,26 @@
 	import Footer from '../components/Footer.svelte';
 	import MobileSidebar from '../components/MobileSidebar.svelte';
 	import { onMount } from 'svelte';
+	let mobile = false;
 	function openSidebar() {
 		const content = document.getElementById('content');
 		content.scrollBy(0, 0);
 		content.style.scrollBehavior = 'smooth';
 	}
 	onMount(() => {
+		const screen = window.innerWidth;
+		if (screen < 768) {
+			mobile = true;
+		}
+		console.log(screen);
+		console.log(mobile);
 		const content = document.getElementById('content');
 		content.scrollBy(260, 0);
 		content.style.scrollBehavior = 'smooth';
 	});
 </script>
 
-<!-- <NavBar /> -->
 <div class="app">
-	<NavBar />
 	<div id="content">
 		<MobileSidebar />
 		<main><slot /></main>
@@ -37,9 +42,6 @@
 		scroll-snap-type: x mandatory;
 		width: 100%;
 		scrollbar-width: none;
-		&::-webkit-scrollbar {
-			display: none;
-		}
 	}
 	main {
 		max-height: 100%;

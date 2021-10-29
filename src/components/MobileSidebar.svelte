@@ -8,8 +8,7 @@
 </script>
 
 <div id="sidebar">
-	<div class="" />
-	<div class="flex flex-col items-center  h-full">
+	<div class="flex flex-col items-center h-full mr-2">
 		<button
 			class="ml-auto p-1 mt-1 hover:bg-lahs-blue-hover transition-all duration-200 ease-linear "
 			on:click={closeSidebar}
@@ -39,15 +38,15 @@
 	<button class="navbar-link" on:click={closeSidebar}>Close Sidebar with JS</button>
 </div>
 
-<style>
+<style lang="scss">
 	#sidebar {
 		@apply bg-lahs-blue;
 		min-width: 200px;
 		scroll-snap-align: start;
 		scroll-snap-stop: always;
 		max-height: 100%;
-	}
-	.sidebar-title {
-		@apply text-svelte-prime;
+		&:-webkit-scrollbar {
+			display: none;
+		}
 	}
 </style>
