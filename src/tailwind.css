@@ -2,20 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 /* Adds scroll snap to tailwind */
-@layer utilities {
-	.snap {
-		scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
-	}
-	.snap-y {
-		--scroll-snap-direction: y;
-	}
-	.snap-mandatory {
-		--scroll-snap-constraint: mandatory;
-	}
-	.snap-start {
-		scroll-snap-align: start;
-	}
-}
+
 @layer base {
 	.dark {
 		@apply bg-gray-800 text-white transition-all duration-100 ease-linear;
@@ -25,8 +12,9 @@
 	}
 }
 .navbar {
-	@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0  flex-row pb-2 pt-2;
+	@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0  flex-row pb-2 pt-2 md:flex-col md:items-center md:justify-between;
 }
+
 .navbar-mobile {
 	@apply md:hidden flex items-center bg-lahs-blue;
 }

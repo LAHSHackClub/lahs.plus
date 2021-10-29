@@ -22,9 +22,11 @@
 		</div>
 	</div>
 {:else}
-	<NavBar />
-	<slot />
-	<Footer />
+	<div class="topnav">
+		<NavBar />
+		<slot />
+		<Footer />
+	</div>
 {/if}
 
 <style lang="scss">
