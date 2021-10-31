@@ -11,7 +11,7 @@ import '../tailwind.css';
 	</div>
 
 	<div class="flex flex-wrap">
-		<div class ="flex flex-grow flex-col bg-lahs-blue border-gray-300 rounded-md shadow-md p-9 text-white">
+		<div class ="flex flex-grow flex-col bg-lahs-blue border-gray-300 rounded-md shadow-md p-11 text-white">
 			<h1 class="flex justify-center text-3xl font-bold m-10">Attendance:</h1>
 			<div class="flex justify-around text-2xl font-semibold fill-current">
 				<div class="dropdown">
@@ -20,7 +20,7 @@ import '../tailwind.css';
 						Phone
 					</button>
 					<div class="dropdown-info">
-						<h4 class="text-center"> 650-941-2761</h4>
+						<h4 class="text-center m-1"> 650-941-2761</h4>
 					</div>
 				  </div>
 				<div class="dropdown">
@@ -29,17 +29,45 @@ import '../tailwind.css';
 						Email
 					</button>
 					<div class="dropdown-info">
-						<a href="mailto:lahs.attendance@mvla.net" target="__blank">lahs.attendance@mvla.net
+						<a href="mailto:lahs.attendance@mvla.net" target="__blank">
+							<h4 class="text-center m-1">lahs.attendance@mvla.net</h4>
 						</a>
 					</div>				
 				</div>
 			</div>
+			<h1 class="flex justify-center text-2xl font-semibold mt-20 mb-10">Other Information:</h1>
+			<div class= "flex justify-center">
+				<ul class="text-2xl text-white">
+					<li>Parents must report an absence within 48 hours of an absence.</li>
+					<li>Due to technical difficulties with the phone system, they are temporarily accepting Attendance notifications from parents/guardians via email.
+						Please send your email to lahs.attendance@mvla.net.</li>
+					<li>The message must be sent from the parent/guardian's email account that is already on file with SIS student contact information, and include:
+						<ul class="ml-10 mt-2">
+							<li>Student first and last name</li>
+							<li>Guardian name</li>
+							<li>Dates or class periods absent</li>
+							<li>Reason for the absence</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-
+	<div class="flex flex-wrap">
+		<div class ="flex flex-grow flex-col bg-white border-gray-300 rounded-md shadow-md p-11 text-white">
+			<h1 class="flex justify-center text-3xl text-lahs-blue font-bold m-10">CHAC and Psychological Services:</h1>
+		</div>
+	</div>
 </div>
 
 <style lang="css">
+
+	li {
+    font-size: 14px;
+	margin-top: 5px;
+    margin-left: 10px;
+    list-style-type: disc;
+ 	}
 
 	.dropdown {
 		position: relative;
@@ -48,13 +76,17 @@ import '../tailwind.css';
 	.dropdown-info {
 		display: none;
 		position: absolute;
-		background-color: lahs-blue;
-		min-width: 160px;
+		min-width: 180px;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		border-radius: 10px;
+		border-radius: 8px;
 		z-index: 1;
 	}
 
-	.dropdown:hover .dropdown-info {display: block;}
-	.dropdown:hover .dropbtn {background-color: lahs-blue;}
+	.dropdown:hover .dropdown-info {
+		display: block;
+		transition: all 0.5s ease 0s;
+	}
+	.dropdown:hover .dropbtn {
+		background: linear-gradient(side, #FFFFFF, lahs-blue);
+	}
 </style>
