@@ -12,12 +12,15 @@
 	}
 }
 .navbar {
-	@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0  flex-row pb-2 pt-2 md:flex-col md:items-center md:justify-between;
+	@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2 md:flex-col sm:flex-col md:items-center md:justify-between;
 }
 
-.navbar-mobile {
-	@apply md:hidden flex items-center bg-lahs-blue;
-}
 .navbar-link {
 	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5 dark:text-gray-200 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
+}
+
+@screen sm {
+	.navbar-mobile {
+		@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg p-5 z-0 flex flex-row pb-2 pt-2 md:flex-col sm:flex-col md:items-center md:justify-between;
+	}
 }

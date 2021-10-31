@@ -5,7 +5,8 @@
 	export let mobile = false;
 	import { update_await_block_branch } from 'svelte/internal';
 	export const preferences = writable('preferences', {
-		theme: 'light'
+		theme: 'light',
+		responsive: true
 	});
 	onMount(() => {
 		preferences.subscribe((preferences) => {
