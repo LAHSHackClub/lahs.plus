@@ -18,6 +18,7 @@ export function checkMobile() {
 				};
 			});
 		}
+		//media dark mode
 	} catch (e) {
 		//SSR error bandaid fix
 		console.log(e);

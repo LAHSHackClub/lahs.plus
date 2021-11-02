@@ -2,12 +2,15 @@
 	import DarkToggle from '../components/DarkToggle.svelte';
 	import { NavItems } from './NavItems';
 	import '../tailwind.css';
+	import { mobile } from '../utils/checkMobile';
 
-	let menu = null;
 	let show = false;
+
 	function toggleMenu() {
-		show = !show;
-		menu.classList.toggle('show', !show);
+		if (mobile) {
+			show = !show;
+		}
+
 		console.log(show);
 	}
 </script>
@@ -17,9 +20,9 @@
 		{#each NavItems as item}
 			<a class="navbar-link" href={item.href}> {item.name}</a>
 		{/each}
-		<DarkToggle darkMobile={false} />
+		<DarkToggle />
 	</div>
-	<div class="navbar-mobile">
+	<div class="navbar-mobile" id="navbar-mobile">
 		<div class="navbar-mobile-toggle">
 			<button class="navbar-mobile-toggle-icon" on:click={toggleMenu}>
 				<svg
@@ -37,13 +40,15 @@
 					/>
 				</svg>
 			</button>
+			<DarkToggle />
 		</div>
 		{#each NavItems as item}
-			<li>
-				<a class="mobile-nav-item" href={item.href}> {item.name}</a>
-			</li>
+			{#if show}
+				<li>
+					<a class="mobile-nav-item" href={item.href}> {item.name}</a>
+				</li>
+			{/if}
 		{/each}
-		<DarkToggle />
 	</div>
 </nav>
 
