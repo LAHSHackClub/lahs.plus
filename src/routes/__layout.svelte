@@ -2,12 +2,13 @@
 	import NavBar from '../components/NavBar.svelte';
 	import Footer from '../components/Footer.svelte';
 	import { onMount } from 'svelte';
-	import { mobile } from '../utils/media';
+	import { checkMobile } from '../utils/checkMobile';
 	onMount(() => {
 		console.log(screen);
-		console.log('mobile = ' + mobile);
 	});
 </script>
+
+<svelte:window on:resize={checkMobile} />
 
 <div class="topnav">
 	<NavBar />

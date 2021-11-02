@@ -17,7 +17,7 @@
 		{#each NavItems as item}
 			<a class="navbar-link" href={item.href}> {item.name}</a>
 		{/each}
-		<DarkToggle />
+		<DarkToggle darkMobile={false} />
 	</div>
 	<div class="navbar-mobile">
 		<div class="navbar-mobile-toggle">

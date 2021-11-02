@@ -1,49 +1,9 @@
 <script lang="ts">
-	import { writable } from 'svelte-local-storage-store';
-	import { onMount } from 'svelte';
-	import { get } from 'svelte/store';
-
-	export const preferences = writable('preferences', {
-		theme: 'light',
-		mobile: false
-	});
-
-	onMount(() => {
-		console.log(checkMobile());
-		preferences.subscribe((preferences) => {
-			document.body.classList.remove('light', 'dark');
-			document.body.classList.add(`${preferences.theme}`);
-		});
-		preferences.set({
-			theme: get(preferences).theme,
-			mobile: get(preferences).mobile
-		});
-	});
-	var mobile = get(preferences).mobile;
-	function checkMobile() {
-		try {
-			if (window.innerWidth < 768) {
-				preferences.update((preferences) => {
-					return {
-						...preferences,
-						mobile: true
-					};
-				});
-			} else {
-				preferences.update((preferences) => {
-					return {
-						...preferences,
-						mobile: false
-					};
-				});
-			}
-		} catch (e) {
-			console.log(e);
-		}
-	}
+	import { preferences } from '../utils/store';
+	import { checkMobile, mobile } from '../utils/checkMobile';
+	import DarkMode from '../utils/darkMode.svelte';
 </script>
 
-<svelte:window on:resize={checkMobile} />
 {#if !mobile}
 	<button
 		class="navbar-link ml-auto "
@@ -58,6 +18,7 @@
 		</svg>
 	</button>
 {/if}
+<svelte:window on:resize={checkMobile} />
 
 {#if mobile}
 	<button
@@ -73,3 +34,5 @@
 		</svg>
 	</button>
 {/if}
+
+<DarkMode />
