@@ -2,21 +2,48 @@
 	import { writable } from 'svelte-local-storage-store';
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
-	export let mobile = false;
-	import { update_await_block_branch } from 'svelte/internal';
+
 	export const preferences = writable('preferences', {
 		theme: 'light',
-		responsive: true
+		mobile: false
 	});
+
 	onMount(() => {
+		console.log(checkMobile());
 		preferences.subscribe((preferences) => {
 			document.body.classList.remove('light', 'dark');
 			document.body.classList.add(`${preferences.theme}`);
 		});
+		preferences.set({
+			theme: get(preferences).theme,
+			mobile: get(preferences).mobile
+		});
 	});
-	const theme = get(preferences).theme;
+	var mobile = get(preferences).mobile;
+	function checkMobile() {
+		try {
+			if (window.innerWidth < 768) {
+				preferences.update((preferences) => {
+					return {
+						...preferences,
+						mobile: true
+					};
+				});
+			} else {
+				preferences.update((preferences) => {
+					return {
+						...preferences,
+						mobile: false
+					};
+				});
+			}
+		} catch (e) {
+			console.log(e);
+		}
+	}
 </script>
 
+<svelte:window on:resize={checkMobile} />
 {#if !mobile}
 	<button
 		class="navbar-link ml-auto "
