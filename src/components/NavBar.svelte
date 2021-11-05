@@ -1,43 +1,56 @@
 <script>
-	const NavItems = [
-		{
-			name: 'Home',
-			href: '/'
-		},
-		{
-			name: 'Map',
-			href: '/map'
-		},
-		{
-			name: 'News',
-			href: '/news'
-		},
-		{
-			name: 'Calendar',
-			href: '/calendar'
-		},
-		{
-			name: 'Clubs',
-			href: '/clubs'
-		},
-		{
-			name: 'Resources',
-			href: '/calendar'
-		},
-		{
-			name: 'About',
-			href: '/about'
-		}
-	];
+	import DarkToggle from '../components/DarkToggle.svelte';
+	import { NavItems } from './NavItems';
+	import '../tailwind.css';
+	import { mobile } from '../utils/checkMobile';
+	let show = true;
+
+	function toggleMenu() {
+		show = !show;
+
+		console.log(show);
+	}
 </script>
 
 <nav>
-	<div class=" bg-lahs-blue border-2 border-gray-300 rounded-lg shadow-lg p-5 z-0 ">
+	<div class="navbar">
 		{#each NavItems as item}
-			<a class=" pl-2 mr-2 text-white font-semibold" href={item.href}> {item.name}</a>
+			<a class="navbar-link" href={item.href}> {item.name}</a>
+		{/each}
+		<DarkToggle />
+	</div>
+	<div class="navbar-mobile" id="navbar-mobile">
+		<div class="navbar-mobile-toggle">
+			<button class="navbar-mobile-toggle-icon" on:click={toggleMenu}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					/>
+				</svg>
+			</button>
+			<DarkToggle />
+		</div>
+		{#each NavItems as item}
+			{#if show}
+				<li>
+					<a class="mobile-nav-item" href={item.href}> {item.name}</a>
+				</li>
+			{/if}
 		{/each}
 	</div>
 </nav>
 
-<style>
+<!-- 
+	This is going to me trying to make a dropdown menu navbar
+ -->
+<style lang="postcss">
 </style>
