@@ -3,13 +3,10 @@
 	import { NavItems } from './NavItems';
 	import '../tailwind.css';
 	import { mobile } from '../utils/checkMobile';
-
-	let show = false;
+	let show = true;
 
 	function toggleMenu() {
-		if (mobile) {
-			show = !show;
-		}
+		show = !show;
 
 		console.log(show);
 	}
