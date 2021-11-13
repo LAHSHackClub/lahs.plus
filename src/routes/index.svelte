@@ -15,7 +15,7 @@
 	<!-- Get better svgs -->
 	<section class="flex flex-wrap">
 		<div class ="flex flex-grow flex-col bg-lahs-blue border-gray-300 rounded-lg shadow-lg p-11 text-white">
-			<h1 class="flex justify-center text-3xl font-bold m-10">Attendance:</h1>
+			<h2 class="flex justify-center text-3xl font-bold m-10">Attendance:</h2>
 			<div class="flex justify-around text-2xl font-semibold fill-current">
 				<div class="dropdown">
 					<button class="dropbtn">
@@ -23,7 +23,7 @@
 						Phone
 					</button>
 					<div class="dropdown-info">
-						<h4 class="text-center m-1">650-941-2761</h4>
+						<h5 class="text-center m-1">650-941-2761</h5>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -33,12 +33,12 @@
 					</button>
 					<div class="dropdown-info">
 						<a href="mailto:lahs.attendance@mvla.net" target="__blank">
-							<h4 class="text-center m-1">lahs.attendance@mvla.net</h4>
+							<h5 class="text-center m-1">lahs.attendance@mvla.net</h5>
 						</a>
 					</div>				
 				</div>
 			</div>
-			<h1 class="flex justify-center text-2xl font-semibold mt-20 mb-10">Other Information:</h1>
+			<h2 class="flex justify-center text-2xl font-semibold mt-20 mb-10">Other Information:</h2>
 			<div class= "flex justify-center">
 				<ul class="text-1xl text-white">
 					<li>Parents must report an absence within 48 hours of an absence.</li>
@@ -58,17 +58,17 @@
 	</section>
 	<section class="flex flex-wrap">
 		<div class ="flex flex-grow flex-col bg-white border-gray-300 rounded-md shadow-md p-11 text-white">
-			<h1 class="flex justify-center text-3xl text-lahs-blue font-bold m-10">CHAC and Psychological Services:</h1>
+			<h2 class="flex justify-center text-3xl text-lahs-blue font-bold m-10">CHAC and Psychological Services:</h2>
 			<div class="text-lahs-blue">
-				<h2 class="flex justify-center text-xl mb-10 mt-20 font-semibold">Community Health Awareness Council (CHAC)</h2>
+				<h3 class="flex justify-center text-xl mb-10 mt-20 font-semibold">Community Health Awareness Council (CHAC)</h3>
 				<div class="ml-20 mr-20">
-					<h3 class="ml-20 mr-20">&emsp;&emsp;All of CHAC's programs are designed to protect young people from high-risk behaviors such as alcohol use,
+					<h4 class="ml-20 mr-20">&emsp;&emsp;All of CHAC's programs are designed to protect young people from high-risk behaviors such as alcohol use,
 						illicit drug use, violence, and premature sexual activity, while building personal assets such as school success, valuing diversity, maintaining good health, and 
 						the ability to delay gratification; all of which will help insure that they have the greatest chance for success in life. 
 						A critical component of CHAC’s work is an “integrated care” model of working with four school districts to support the psychological and emotional well-being of 
 						students in K-12. All school programs are provided free of charge to students and their families. CHAC’s school-based on-site counseling services address social, 
-						emotional and mental health issues affecting students’ ability to learn. Staff consultation and training services enhance student support and success in the classroom.</h3>
-					 <h2 class="text-xl ml-20 mb-2 mt-2 font-semibold">&emsp;&emsp;Other info?</h2>
+						emotional and mental health issues affecting students’ ability to learn. Staff consultation and training services enhance student support and success in the classroom.</h4>
+					 <h3 class="text-xl ml-20 mb-2 mt-2 font-semibold">&emsp;&emsp;Other info?</h3>
 					 <ul class="ml-24 text-base font-semibold">
 						 <li>
 							 Email:
