@@ -3,17 +3,17 @@
 </script>
 
 <div class="mx-auto">
-	<div class="flex flex-wrap">
+	<section class="flex flex-wrap">
 		<div class="flex flex-grow flex-col bg-white border-2 border-gray-300 rounded-lg shadow-lg p-10">
 			<h1 class="flex justify-center text-4xl font-semibold mb-10">Welcome to lahs.plus!</h1>
 			<div class="flex justify-center">
 				<img src="https://lahs.mvla.net/images/footer-logo.png" alt="LAHS Logo" width="250" height="250">
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Get better svgs -->
-	<div class="flex flex-wrap">
+	<section class="flex flex-wrap">
 		<div class ="flex flex-grow flex-col bg-lahs-blue border-gray-300 rounded-lg shadow-lg p-11 text-white">
 			<h1 class="flex justify-center text-3xl font-bold m-10">Attendance:</h1>
 			<div class="flex justify-around text-2xl font-semibold fill-current">
@@ -55,8 +55,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="flex flex-wrap">
+	</section>
+	<section class="flex flex-wrap">
 		<div class ="flex flex-grow flex-col bg-white border-gray-300 rounded-md shadow-md p-11 text-white">
 			<h1 class="flex justify-center text-3xl text-lahs-blue font-bold m-10">CHAC and Psychological Services:</h1>
 			<div class="text-lahs-blue">
@@ -81,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </div>
 
 <style lang="scss">
