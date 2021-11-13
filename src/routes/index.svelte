@@ -1,7 +1,5 @@
 <script>
-	import { select_multiple_value } from 'svelte/internal';
-import '../tailwind.css';
-import About from './about.svelte';
+	import '../tailwind.css';
 </script>
 
 <div class=" mx-auto">
@@ -27,7 +25,7 @@ import About from './about.svelte';
 					<div class="dropdown-info">
 						<h4 class="text-center m-1"> 650-941-2761</h4>
 					</div>
-				  </div>
+				</div>
 				<div class="dropdown">
 					<button class="dropbtn">
 						<svg><use xlink:href="/img/icons.svg#email"/></svg>
@@ -70,16 +68,16 @@ import About from './about.svelte';
 						A critical component of CHAC’s work is an “integrated care” model of working with four school districts to support the psychological and emotional well-being of 
 						students in K-12. All school programs are provided free of charge to students and their families. CHAC’s school-based on-site counseling services address social, 
 						emotional and mental health issues affecting students’ ability to learn. Staff consultation and training services enhance student support and success in the classroom.</h3>
-				   <h2 class="text-xl ml-20 mb-2 mt-2 font-semibold">&emsp;&emsp;Other info?</h2>
-				   <ul class="ml-24 text-base font-semibold">
-					   <li>
-						   Email:
-						   <a href="mailto:info@chacmv.org" target="_blank">info@chacmv.org</a>
-					   </li>
-					   <li>
-						   Phone: (650) 965-2020
-					   </li>
-				   </ul>
+					 <h2 class="text-xl ml-20 mb-2 mt-2 font-semibold">&emsp;&emsp;Other info?</h2>
+					 <ul class="ml-24 text-base font-semibold">
+						 <li>
+							 Email:
+							 <a href="mailto:info@chacmv.org" target="_blank">info@chacmv.org</a>
+						 </li>
+						 <li>
+							 Phone: (650) 965-2020
+						 </li>
+					 </ul>
 				</div>
 			</div>
 		</div>
