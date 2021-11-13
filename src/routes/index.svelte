@@ -2,11 +2,11 @@
 	import '../tailwind.css';
 </script>
 
-<div class=" mx-auto">
+<div class="mx-auto">
 	<div class="flex flex-wrap">
 		<div class="flex flex-grow flex-col bg-white border-2 border-gray-300 rounded-lg shadow-lg p-10">
 			<h1 class="flex justify-center text-4xl font-semibold mb-10">Welcome to lahs.plus!</h1>
-			<div  class="flex justify-center">
+			<div class="flex justify-center">
 				<img src="https://lahs.mvla.net/images/footer-logo.png" alt="LAHS Logo" width="250" height="250">
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 						Phone
 					</button>
 					<div class="dropdown-info">
-						<h4 class="text-center m-1"> 650-941-2761</h4>
+						<h4 class="text-center m-1">650-941-2761</h4>
 					</div>
 				</div>
 				<div class="dropdown">
