@@ -86,40 +86,42 @@ import About from './about.svelte';
 	</div>
 </div>
 
-<style lang="css">
-
+<style lang="scss">
 	a:hover{
 		text-decoration: underline;
 	}
 
 	li {
-	margin-top: 5px;
-    margin-left: 50px;
-    list-style-type: disc;
+		margin-top: 5px;
+		margin-left: 50px;
+		list-style-type: disc;
  	}
 
 	.dropdown {
 		position: relative;
 		display: inline-block;
-	}
-	.dropdown-info {
-		display: none;
-		position: absolute;
-		min-width: 180px;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		border-radius: 8px;
-		z-index: 1;
-	}
+		
+		.dropdown-info {
+			display: none;
+			position: absolute;
+			min-width: 180px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			border-radius: 8px;
+			z-index: 1;
+		}
 
-	.dropdown:hover .dropdown-info {
-		display: block;
-		transition: all 0.5s ease 0s;
-	}
-	.dropdown:hover .dropbtn {
-		background: linear-gradient(side, #FFFFFF, lahs-blue);
-	}
-	.dropdown .dropbtn svg {
-		height: 70px;
-		width: 70px;
+		.dropbtn {
+			background: linear-gradient(side, #FFFFFF, lahs-blue);
+		}
+
+		.dropbtn svg {
+			height: 70px;
+			width: 70px;
+		}
+
+		&:hover .dropdown-info {
+			display: block;
+			transition: all 0.5s ease 0s;
+		}
 	}
 </style>
