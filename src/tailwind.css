@@ -21,7 +21,9 @@
 .hidden {
 	@apply hidden;
 }
-
+.dark-mode-transition {
+	@apply transition-all duration-100 ease-linear;
+}
 @media (min-width: 768.1px) {
 	.navbar-mobile {
 		@apply hidden;
