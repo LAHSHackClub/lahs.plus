@@ -2,13 +2,15 @@
 	export var key;
 	var club = 'hi';
 	var club_desc = '';
+	import { getClubName } from '../utils/getClubs';
+	getClubName();
 </script>
 
 <div class="container">
 	<div class="inner">
 		<div class="club-title">
 			<h1>
-				Club: {club}
+				<!-- Map each name to h1 -->
 			</h1>
 		</div>
 		<h3 class="club-desc">
