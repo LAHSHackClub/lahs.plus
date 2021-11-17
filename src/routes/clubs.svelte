@@ -1,11 +1,13 @@
 <script>
 	import Club from '../components/Club.svelte';
+	import { getClubName } from '../utils/getClubs';
 </script>
 
 <div>List of Clubs</div>
 
 <section class="club-section">
 	<Club key={1} />
+	<Club key={2} />
 </section>
 
 <style>

@@ -1,9 +1,20 @@
 <script>
 	export var key;
-	var club = 'hi';
-	var club_desc = '';
-	import { getClubName } from '../utils/getClubs';
-	getClubName();
+	var club_name = 'hi';
+	var club_desc = 'This is a descirption';
+	import { getClubDescription, getClubName } from '../utils/getClubs';
+	getClubName().then(function (data) {
+		// Map the data to the club_name variable using key to check
+		club_name = data[key];
+		console.log(club_name);
+		return club_name;
+	});
+	getClubDescription().then(function (data) {
+		club_desc = data[key];
+		console.log(club_desc);
+		return club_desc;
+	});
+	console.log(club_name);
 </script>
 
 <div class="container">
@@ -11,6 +22,7 @@
 		<div class="club-title">
 			<h1>
 				<!-- Map each name to h1 -->
+				{club_name}
 			</h1>
 		</div>
 		<h3 class="club-desc">
