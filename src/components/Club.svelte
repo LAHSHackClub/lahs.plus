@@ -19,12 +19,9 @@
 
 <div class="container">
 	<div class="inner">
-		<div class="club-title">
-			<h1>
-				<!-- Map each name to h1 -->
-				{club_name}
-			</h1>
-		</div>
+		<h1 class="club-title">
+			{club_name}
+		</h1>
 		<h3 class="club-desc">
 			{club_desc}
 		</h3>
@@ -41,6 +38,7 @@
 		max-width: 820px;
 		border-top-left-radius: 12px;
 		border-top-right-radius: 12px;
+		margin-bottom: auto;
 	}
 	.inner {
 		z-index: 2;
@@ -50,12 +48,12 @@
 		border-bottom-left-radius: 12px;
 		border-bottom-right-radius: 12px;
 		padding: 16px 24px 24px 24px;
+		margin: 2rem;
 	}
 
 	.club-title {
 		font-size: 1.5em;
 		font-weight: bold;
-		margin-bottom: 0;
 	}
 	.club-desc {
 		font-size: 1em;

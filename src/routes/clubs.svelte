@@ -6,18 +6,13 @@
 <div>List of Clubs</div>
 
 <section class="club-section">
-	<Club key={1} />
-	<Club key={2} />
+	<Club key={10} />
+	<Club key={0} />
 </section>
 
 <style>
 	.club-section {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-items: center;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 1200px;
+		display: grid;
+		grid-template-rows: min-content;
 	}
 </style>
