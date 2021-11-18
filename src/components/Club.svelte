@@ -1,23 +1,20 @@
 <script>
 	export var key;
-	var club_name = 'hi';
-	var club_desc = 'This is a descirption';
-	import { getClubDescription, getClubName } from '../utils/getClubs';
+	var club_name = '';
+	var club_desc = 'loading....';
+	import { getClubDescription, getClubName, cleanCombinedArray } from '../utils/getClubs';
+
 	getClubName().then(function (data) {
-		// Map the data to the club_name variable using key to check
 		club_name = data[key];
-		console.log(club_name);
 		return club_name;
 	});
 	getClubDescription().then(function (data) {
 		club_desc = data[key];
-		console.log(club_desc);
 		return club_desc;
 	});
-	console.log(club_name);
 </script>
 
-<div class="container">
+<div class="container" id="clubs">
 	<div class="inner">
 		<h1 class="club-title">
 			{club_name}

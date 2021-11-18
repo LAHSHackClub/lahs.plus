@@ -1,18 +1,37 @@
-<script>
+<script lang="ts">
 	import Club from '../components/Club.svelte';
-	import { getClubName } from '../utils/getClubs';
+	import { cleanCombinedArray, getClubNameAndDescription } from '../utils/getClubs';
+	async function getClub() {
+		const club = await cleanCombinedArray();
+		return club;
+	}
 </script>
 
 <div>List of Clubs</div>
 
 <section class="club-section">
-	<Club key={10} />
-	<Club key={0} />
+	<div class="club-container">
+		{#await getClub()}
+			<p>...waiting</p>
+		{:then club}
+			{#each club as item, i}
+				<Club key={i} />
+			{/each}
+		{/await}
+	</div>
 </section>
 
 <style>
 	.club-section {
-		display: grid;
+		display: flex;
 		grid-template-rows: min-content;
+	}
+	.club-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap-reverse;
+		align-items: center;
+		width: 100%;
 	}
 </style>
