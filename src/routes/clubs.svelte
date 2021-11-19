@@ -2,6 +2,7 @@
 	import Club from '../components/Club.svelte';
 	import { page } from '$app/stores';
 	import { cleanCombinedArray } from '../utils/getClubs';
+	import { get } from 'svelte/store';
 	var searchClub = $page.query.get('club');
 	async function getClub() {
 		const club = await cleanCombinedArray();
@@ -53,7 +54,9 @@
 			name="club"
 			value={searchClub}
 			onInput={(e) => {
-				page.query.set('club', searchClub);
+				page.subscribe((state) => {
+					state.path = `/clubs?club=${searchClub}`;
+				});
 			}}
 			class="search"
 		/>
