@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
 	export var key;
 	var club_name = '';
 	var club_desc = 'loading....';
-	import { getClubDescription, getClubName, cleanCombinedArray } from '../utils/getClubs';
-
+	import { getClubDescription, getClubName } from '../utils/getClubs';
 	getClubName().then(function (data) {
 		club_name = data[key];
 		return club_name;
