@@ -1,51 +1,70 @@
 <script lang="ts">
 	import Club from '../components/Club.svelte';
+	import { page } from '$app/stores';
 	import { cleanCombinedArray } from '../utils/getClubs';
+	var searchClub = $page.query.get('club');
 	async function getClub() {
 		const club = await cleanCombinedArray();
 		return club;
 	}
-	let search = '';
+	async function mapIdToName() {
+		const club = await getClub();
+		const clubMap = club.map((club) => {
+			return {
+				id: club.id,
+				name: club.name,
+				description: club.description
+			};
+		});
+		return clubMap;
+	}
+	async function getClubName(id: number) {
+		const clubMap = await mapIdToName();
+		const clubName = clubMap.find((club) => {
+			if (club.id === id) {
+				return club.name;
+			}
+		});
+		return clubName;
+	}
+	async function getClubId(name: string) {
+		const clubMap = await mapIdToName();
+		const clubId = clubMap.find((club) => {
+			if (club.name === name) {
+				return club.id;
+			}
+		});
+		return clubId;
+	}
 	async function query(search: string) {
 		const club = await getClub();
-		club.filter((club) => club.name === search);
-		const c = club.findIndex((club) => club.name === search);
-		return c;
+		const c = club.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+		if (search === '') {
+			return undefined;
+		}
+		return c.find((item) => item.name.toLowerCase().includes(search.toLowerCase()));
 	}
-	query(search);
 </script>
 
 <!-- Search For club by name -->
-<form>
-	<input
-		type="text"
-		name="club"
-		bind:value={search}
-		class="form-input"
-		placeholder="Search for club"
-	/>
-	<button
-		on:click={async (e) => {
-			const s = await query(search);
-			console.log(s);
-			e.preventDefault();
-		}}
-	>
-		Search
-	</button>
-</form>
-
-<section class="club-section">
-	<div class="club-container">
-		{#await getClub()}
-			<p>...waiting</p>
-		{:then club}
-			{#each club as item, i}
-				<Club key={i} />
-			{/each}
-		{/await}
-	</div>
-</section>
+<div class="club-container">
+	{#await query(searchClub) then club}
+		<Club key={club.id} />
+	{/await}
+</div>
+{#if searchClub === '' || searchClub === undefined || searchClub === null}
+	<section class="club-section">
+		<div class="club-container">
+			{#await getClub()}
+				<p>...waiting</p>
+			{:then club}
+				{#each club as item, i}
+					<Club key={i} />
+				{/each}
+			{/await}
+		</div>
+	</section>
+{/if}
 
 <style>
 	.club-section {
@@ -61,6 +80,6 @@
 		width: 100%;
 	}
 	.form-input {
-		@apply bg-gray-200;
+		@apply bg-gray-200 text-gray-900;
 	}
 </style>

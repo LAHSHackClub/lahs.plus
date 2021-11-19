@@ -3,6 +3,11 @@ export async function getClubs() {
 	const json = await resp.json();
 	return json;
 }
+interface Club {
+	name: string;
+	description: string;
+	id: number;
+}
 
 export async function getClubName() {
 	const json = await getClubs();
@@ -30,19 +35,20 @@ export async function cleanCombinedArray() {
 	//remove undefined
 	const club_array = await combineClubNameAndDescription();
 	const clean_club_array = club_array.filter((c) => c !== undefined);
-	const reversed = await clean_club_array.reverse();
-	return reversed;
+	return clean_club_array;
 }
-async function combineClubNameAndDescription() {
+async function combineClubNameAndDescription(): Promise<Club[]> {
 	const club_name = await getClubName();
 	const club_description = await getClubDescription();
-	const club_array = Array(club_name.length);
+	var club_array: Club[] = [];
+	club_array = Array(club_name.length);
 	for (let i = 0; i < club_name.length; i++) {
 		const club = {
 			name: club_name[i],
 			description: club_description[i],
 			id: i
 		};
+
 		club_array.push(club);
 	}
 	return club_array;
