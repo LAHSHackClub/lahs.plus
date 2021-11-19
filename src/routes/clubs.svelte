@@ -46,6 +46,20 @@
 	}
 </script>
 
+<div class="form">
+	<form>
+		<input
+			type="text"
+			name="club"
+			value={searchClub}
+			onInput={(e) => {
+				page.query.set('club', searchClub);
+			}}
+			class="search"
+		/>
+	</form>
+</div>
+
 <!-- Search For club by name -->
 <div class="club-container">
 	{#await query(searchClub) then club}
@@ -79,7 +93,15 @@
 		align-items: center;
 		width: 100%;
 	}
-	.form-input {
-		@apply bg-gray-200 text-gray-900;
+
+	.search {
+		width: 100%;
+		height: 50px;
+		border: none;
+		border-bottom: 1px solid #ccc;
+		font-size: 1.5rem;
+		padding: 0 10px;
+		margin: 0;
+		@apply text-gray-900;
 	}
 </style>
