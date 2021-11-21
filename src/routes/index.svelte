@@ -3,7 +3,7 @@
 </script>
 
 <div class="mx-auto">
-	<section class="flex flex-wrap flex-row shadow-lg flex-grow-0 rounded-lg border-gray-300 p-10 border-2">
+	<section class="flex flex-wrap flex-row shadow-lg flex-grow-0 rounded-lg border-gray-300 py-10 border-2">
 		<div class="flex flex-col bg-white w-2/3 rounded-md">
 			<h1 class="flex justify-center text-lahs-blue text-4xl font-bold mb-10">Welcome to lahs.plus!</h1>
 			<div class="flex justify-center">
@@ -12,32 +12,32 @@
 		</div>
 		<section class="flex flex-wrap w-1/3"> 
 			<section class="">
-				<div class ="flex flex-col flex-grow bg-lahs-blue border-gray-300 rounded-lg shadow-lg p-6 text-white">
-					<details class="max-w-full">
+				<div class ="flex flex-col bg-lahs-blue border-gray-300 rounded-lg shadow-lg p-6 text-white">
+					<details>
 						<summary class="flex justify-center align-middle text-3xl font-bold my-10 p-6 shadow-lg rounded-md">Attendance:</summary>
 						<div class="flex justify-around text-2xl font-semibold fill-current">
 							<div class="dropdown">
 								<button class="dropbtn">
-									<svg><use xlink:href="/img/icons.svg#phone"/></svg>
-									Phone
-								</button>
-								<div class="dropdown-info">
-									<h5 class="text-center m-1">650-941-2761</h5>
-								</div>
-							</div>
-							<div class="dropdown">
-								<button class="dropbtn">
-									<svg><use xlink:href="/img/icons.svg#email"/></svg>
+									<svg class="stroke-width-2"><use xlink:href="/img/icons.svg#email"/></svg>
 									Email
 								</button>
 								<div class="dropdown-info">
-									<a href="mailto:lahs.attendance@mvla.net" target="__blank">
-										<h5 class="text-center m-1">lahs.attendance@mvla.net</h5>
+									<a href="mailto:lahs.attendance@mvla.net" target="__blank"> 
+										<h6 class="phone">lahs.attendance@mvla.net</h6>
 									</a>
 								</div>				
 							</div>
+							<div class="dropdown">
+								<button class="dropbtn">
+									<svg class=""><use xlink:href="/img/icons.svg#phone"/></svg>
+									Phone
+								</button>
+								<div class="dropdown-info">
+									<h6 class="text-center">650-941-2761</h6>
+								</div>
+							</div>
 						</div>
-						<h2 class="flex justify-center text-2xl font-semibold mt-20 mb-10">Other Information:</h2>
+						<h2 class="flex justify-center text-2xl font-semibold mt-10 mb-10">Other Information:</h2>
 						<div class= "flex justify-center">
 							<ul class="text-1xl text-white">
 								<li>Parents must report an absence within 48 hours of an absence.</li>
@@ -57,14 +57,14 @@
 					<details class="info">
 						<summary class="flex justify-center align-middle text-3xl font-bold my-10 p-6 shadow-lg rounded-md">CHAC and Psychological Services:</summary>
 						<h3 class="flex justify-center text-xl mb-10 mt-20 font-semibold">Community Health Awareness Council (CHAC)</h3>
-						<div class="ml-20 mr-20">
-							<h4 class="ml-20 mr-20">&emsp;&emsp;All of CHAC's programs are designed to protect young people from high-risk behaviors such as alcohol use,
+						<div>
+							<h4>&emsp;&emsp;All of CHAC's programs are designed to protect young people from high-risk behaviors such as alcohol use,
 								illicit drug use, violence, and premature sexual activity, while building personal assets such as school success, valuing diversity, maintaining good health, and 
 								the ability to delay gratification; all of which will help insure that they have the greatest chance for success in life. 
 								A critical component of CHAC’s work is an “integrated care” model of working with four school districts to support the psychological and emotional well-being of 
 								students in K-12. All school programs are provided free of charge to students and their families. CHAC’s school-based on-site counseling services address social, 
 								emotional and mental health issues affecting students’ ability to learn. Staff consultation and training services enhance student support and success in the classroom.</h4>
-							<h3 class="text-xl ml-20 mb-2 mt-2 font-semibold">&emsp;&emsp;Other info?</h3>
+							<h3 class="text-xl ml-20 mb-4 mt-4 font-semibold">&emsp;&emsp;Other info?</h3>
 							<ul class="ml-24 text-base font-semibold">
 								<li>
 									Email:
@@ -104,28 +104,38 @@
 	.dropdown {
 		position: relative;
 		display: inline-block;
+		justify-items: center;
+		white-space: normal;
+		opacity: 1.0;
 		
 		.dropdown-info {
 			display: none;
 			position: absolute;
-			min-width: 180px;
+			flex-wrap: wrap;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 			border-radius: 8px;
 			z-index: 1;
+			opacity: 1.0;
 		}
 
 		.dropbtn {
 			background: linear-gradient(side, #FFFFFF, lahs-blue);
+			white-space: normal;
 		}
 
 		.dropbtn svg {
-			height: 70px;
-			width: 70px;
+			height: 50px;
+			width: 50px;
+		}
+
+		.phone{
+			max-width: 300px;
+			overflow-wrap: break-word;
 		}
 
 		&:hover .dropdown-info {
 			display: block;
-			transition: all 0.5s ease 0s;
+			transition: all 0.5s ease 0.5s;
 		}
-	}
+	}	
 </style>
