@@ -1,16 +1,15 @@
 <script lang="ts" context="module">
-	export let key: number;
-	import { fetchClub, fetchClubs } from '../utils/clubStore';
-	var club_name = '';
-	var club_desc = 'loading....';
+	import { fetchClub } from '../utils/clubStore';
+	export let key;
+
 	export async function load() {
-		const club = await fetchClub(key);
-		club_name = club.name;
-		club_desc = club.description;
-		console.log(club);
+		const singleClub = await fetchClub(key);
 		return {
-			club_name,
-			club_desc
+			props: {
+				club: singleClub,
+				name: singleClub.name,
+				description: singleClub.description
+			}
 		};
 	}
 </script>
@@ -21,12 +20,15 @@
 
 <div class="container" id="clubs">
 	<div class="inner">
-		<!-- svelte-ignore missing-declaration -->
 		<h1 class="club-title">
-			{club_name}
+			{#await load() then props}
+				{props.props.name}
+			{/await}
 		</h1>
 		<h3 class="club-desc">
-			{club_desc}
+			{#await load() then props}
+				{props.props.description}
+			{/await}
 		</h3>
 		<h6>
 			{key}

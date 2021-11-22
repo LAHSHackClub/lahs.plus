@@ -1,21 +1,14 @@
 <script lang="ts" context="module">
 	import Club from '../components/Club.svelte';
 	import { page } from '$app/stores';
-	import { fetchClubs, fetchClub } from '../utils/clubStore';
+	import { fetchClubs } from '../utils/clubStore';
 
 	export async function load() {
-		const resp = await fetch('http://localhost:8000/cache/club-info.json');
-		const clubs = await resp.json();
-		const loadedClubs = clubs.map((club, id: number) => {
-			return {
-				name: club.Name[0].content,
-				description: club['Club Description'][0].content,
-				id: id
-			};
-		});
+		const clubs = await fetchClubs();
+
 		return {
 			props: {
-				clubs: loadedClubs
+				clubs: clubs
 			}
 		};
 	}
@@ -23,7 +16,14 @@
 
 <script lang="ts">
 	var searchClub = $page.query.get('club');
-	async function query(search: string) {}
+	async function query(search: string) {
+		const clubs = await load();
+		clubs.props.clubs.forEach((club) => {
+			if (club.name.toLowerCase().includes(search.toLowerCase())) {
+				return club.id;
+			}
+		});
+	}
 </script>
 
 <div class="form">
@@ -43,11 +43,13 @@
 </div>
 
 <!-- Search For club by name -->
-<div class="club-container">
-	<!-- {#await fetchClubs()}
-		<Club key={} />
-	{/await} -->
-</div>
+{#if searchClub === '' || searchClub !== undefined || searchClub !== null}
+	<div class="club-container">
+		{#await query(searchClub) then club}
+			<Club key={club} />
+		{/await}
+	</div>{/if}
+
 {#if searchClub === '' || searchClub === undefined || searchClub === null}
 	<section class="club-section">
 		<div class="club-container">
