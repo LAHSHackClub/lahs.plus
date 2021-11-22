@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 
 interface Club {
 	name: string;
@@ -39,3 +39,12 @@ export async function fetchClub(id: number): Promise<Club> {
 	const clubs = await fetchClubs();
 	return clubs[id];
 }
+// To get id we need to get the index of the club and then reutrn the id for that club and then we can use it in the Club component to render the list of them all in in clubs.
+export const getClubById = (id: number): Club => {
+	const clubs = get(clubStore).selectedClub;
+	return clubs.id === id ? clubs : clubs[id];
+};
+//Gets the id of the selected club from the index of the club in the array
+export const getClubId = (clubs: Club[], selectedClub: Club): number => {
+	return clubs.indexOf(selectedClub);
+};

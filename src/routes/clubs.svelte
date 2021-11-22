@@ -1,11 +1,12 @@
 <script lang="ts" context="module">
-	import Club from '../components/Club.svelte';
+	import Club from './clubs/[slug].svelte';
 	import { page } from '$app/stores';
 	import { fetchClubs } from '../utils/clubStore';
-
+	import { setContext } from 'svelte';
 	export async function load() {
 		const clubs = await fetchClubs();
-
+		let id: number;
+		setContext('key', clubs[id].id);
 		return {
 			props: {
 				clubs: clubs
@@ -23,6 +24,7 @@
 				return club.id;
 			}
 		});
+		return undefined;
 	}
 </script>
 
@@ -43,12 +45,13 @@
 </div>
 
 <!-- Search For club by name -->
-{#if searchClub === '' || searchClub !== undefined || searchClub !== null}
+{#if searchClub !== '' || searchClub !== undefined || searchClub !== null}
 	<div class="club-container">
 		{#await query(searchClub) then club}
 			<Club key={club} />
 		{/await}
-	</div>{/if}
+	</div>
+{/if}
 
 {#if searchClub === '' || searchClub === undefined || searchClub === null}
 	<section class="club-section">
@@ -57,7 +60,6 @@
 				{#each promise.props.clubs as club}
 					<Club key={club.id} />
 				{/each}
-				<!-- promise was fulfilled -->
 			{/await}
 		</div>
 	</section>
