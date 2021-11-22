@@ -9,15 +9,13 @@ interface Club {
 	id: number;
 }
 
-export async function getClubName() {
+export async function getClubNames() {
 	const json = await getClubs();
-	const data = json.data;
 	const club_array = [];
 	for (let i = 0; i < json.length; i++) {
 		const club = json[i].Name[0].content;
 		club_array.push(club);
 	}
-
 	return club_array;
 }
 
@@ -31,14 +29,14 @@ export async function getClubDescription() {
 	}
 	return club_array;
 }
-export async function cleanCombinedArray() {
+export async function cleanCombinedArray(): Promise<Club[]> {
 	//remove undefined
 	const club_array = await combineClubNameAndDescription();
 	const clean_club_array = club_array.filter((c) => c !== undefined);
 	return clean_club_array;
 }
-async function combineClubNameAndDescription(): Promise<Club[]> {
-	const club_name = await getClubName();
+export async function combineClubNameAndDescription(): Promise<Club[]> {
+	const club_name = await getClubNames();
 	const club_description = await getClubDescription();
 	var club_array: Club[] = [];
 	club_array = Array(club_name.length);

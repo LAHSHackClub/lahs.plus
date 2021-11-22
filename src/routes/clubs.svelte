@@ -1,50 +1,29 @@
-<script lang="ts">
+<script lang="ts" context="module">
 	import Club from '../components/Club.svelte';
 	import { page } from '$app/stores';
-	import { cleanCombinedArray } from '../utils/getClubs';
-	import { get } from 'svelte/store';
-	var searchClub = $page.query.get('club');
-	async function getClub() {
-		const club = await cleanCombinedArray();
-		return club;
-	}
-	async function mapIdToName() {
-		const club = await getClub();
-		const clubMap = club.map((club) => {
+	import { fetchClubs, fetchClub } from '../utils/clubStore';
+
+	export async function load() {
+		const resp = await fetch('http://localhost:8000/cache/club-info.json');
+		const clubs = await resp.json();
+		const loadedClubs = clubs.map((club, id: number) => {
 			return {
-				id: club.id,
-				name: club.name,
-				description: club.description
+				name: club.Name[0].content,
+				description: club['Club Description'][0].content,
+				id: id
 			};
 		});
-		return clubMap;
-	}
-	async function getClubName(id: number) {
-		const clubMap = await mapIdToName();
-		const clubName = clubMap.find((club) => {
-			if (club.id === id) {
-				return club.name;
+		return {
+			props: {
+				clubs: loadedClubs
 			}
-		});
-		return clubName;
+		};
 	}
-	async function getClubId(name: string) {
-		const clubMap = await mapIdToName();
-		const clubId = clubMap.find((club) => {
-			if (club.name === name) {
-				return club.id;
-			}
-		});
-		return clubId;
-	}
-	async function query(search: string) {
-		const club = await getClub();
-		const c = club.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
-		if (search === '') {
-			return undefined;
-		}
-		return c.find((item) => item.name.toLowerCase().includes(search.toLowerCase()));
-	}
+</script>
+
+<script lang="ts">
+	var searchClub = $page.query.get('club');
+	async function query(search: string) {}
 </script>
 
 <div class="form">
@@ -65,19 +44,18 @@
 
 <!-- Search For club by name -->
 <div class="club-container">
-	{#await query(searchClub) then club}
-		<Club key={club.id} />
-	{/await}
+	<!-- {#await fetchClubs()}
+		<Club key={} />
+	{/await} -->
 </div>
 {#if searchClub === '' || searchClub === undefined || searchClub === null}
 	<section class="club-section">
 		<div class="club-container">
-			{#await getClub()}
-				<p>...waiting</p>
-			{:then club}
-				{#each club as item, i}
-					<Club key={i} />
+			{#await load() then promise}
+				{#each promise.props.clubs as club}
+					<Club key={club.id} />
 				{/each}
+				<!-- promise was fulfilled -->
 			{/await}
 		</div>
 	</section>

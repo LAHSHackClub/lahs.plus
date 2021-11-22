@@ -1,26 +1,36 @@
-<script lang="ts">
-	export var key;
+<script lang="ts" context="module">
+	export let key: number;
+	import { fetchClub, fetchClubs } from '../utils/clubStore';
 	var club_name = '';
 	var club_desc = 'loading....';
-	import { getClubDescription, getClubName } from '../utils/getClubs';
-	getClubName().then(function (data) {
-		club_name = data[key];
-		return club_name;
-	});
-	getClubDescription().then(function (data) {
-		club_desc = data[key];
-		return club_desc;
-	});
+	export async function load() {
+		const club = await fetchClub(key);
+		club_name = club.name;
+		club_desc = club.description;
+		console.log(club);
+		return {
+			club_name,
+			club_desc
+		};
+	}
+</script>
+
+<script lang="ts">
+	export let key;
 </script>
 
 <div class="container" id="clubs">
 	<div class="inner">
+		<!-- svelte-ignore missing-declaration -->
 		<h1 class="club-title">
 			{club_name}
 		</h1>
 		<h3 class="club-desc">
 			{club_desc}
 		</h3>
+		<h6>
+			{key}
+		</h6>
 	</div>
 </div>
 
