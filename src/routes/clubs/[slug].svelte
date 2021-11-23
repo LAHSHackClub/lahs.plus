@@ -25,7 +25,6 @@
 				{props.club.description}
 			{/await}
 		</h3>
-		<h6 />
 	</div>
 </div>
 

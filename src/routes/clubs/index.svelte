@@ -22,7 +22,6 @@
 	const searchs = search($page.query.get('search')).then((results) => {
 		return results;
 	});
-	console.log(searchClub);
 </script>
 
 <form class="search-form">
