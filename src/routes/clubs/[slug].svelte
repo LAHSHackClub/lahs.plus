@@ -1,6 +1,3 @@
-<script context="module" lang="ts">
-</script>
-
 <script lang="ts">
 	import { page } from '$app/stores';
 	export let key;
@@ -18,7 +15,9 @@
 	<div class="inner">
 		<h1 class="club-title">
 			{#await load() then props}
-				{props.club.name}
+				<a href={'/clubs/' + props.club.id}>
+					{props.club.name}
+				</a>
 			{/await}
 		</h1>
 		<h3 class="club-desc">
