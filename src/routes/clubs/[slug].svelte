@@ -54,10 +54,12 @@
 	.club-title {
 		font-size: 1.5em;
 		font-weight: bold;
+		@apply text-white;
 	}
 	.club-desc {
 		font-size: 1em;
 		margin-top: 0;
 		word-wrap: break-word;
+		@apply text-white;
 	}
 </style>
