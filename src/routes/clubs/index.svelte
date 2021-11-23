@@ -2,12 +2,12 @@
 	import { fetchClubs } from '../../utils/clubStore';
 	import { page } from '$app/stores';
 	import Club from '../clubs/[slug].svelte';
+	import { get } from 'svelte/store';
 	async function load() {
 		const clubs = await fetchClubs();
 		return clubs;
 	}
 	let searchClub = $page.query.get('search');
-	console.log(searchClub);
 	async function search(query: string) {
 		//Find clubs that match the query then return the id
 		const clubs = await fetchClubs();
@@ -22,45 +22,58 @@
 	const searchs = search($page.query.get('search')).then((results) => {
 		return results;
 	});
+	console.log(searchClub);
 </script>
 
-<form>
-	<input type="text" name="search" placeholder="Search" bind:value={searchClub} />
+<form class="search-form">
+	<input type="text" name="search" placeholder="Search" class="search" bind:value={searchClub} />
 	<button type="submit">Search</button>
 </form>
-{#if searchClub !== undefined && searchClub !== null}
-	<ul>
-		{#await search('') then results}
-			{#each results as club}
-				<li>
-					<a href="/clubs/{club.id}">{club.name}</a>
-				</li>
-			{/each}
-		{/await}
-	</ul>
+{#if searchClub !== null || searchClub !== undefined || searchClub !== ''}
+	<section class="search-section">
+		<ul>
+			{#await search($page.query.get('search')) then results}
+				{#each results as club}
+					<Club key={club.id} />
+				{/each}
+			{/await}
+		</ul>
+	</section>
 {/if}
-
-<section class="club-section">
-	<div class="club-container">
-		{#await load() then promise}
-			{#each promise as club}
-				<Club key={club.id} />
-			{/each}
-		{/await}
-	</div>
-</section>
+{#if searchClub === undefined || searchClub === null}
+	<section class="club-section">
+		<div class="club-container">
+			{#await load() then promise}
+				{#each promise as club}
+					<Club key={club.id} />
+				{/each}
+			{/await}
+		</div>
+	</section>
+{/if}
 
 <style>
 	.club-section {
 		display: flex;
 	}
+	.search {
+		@apply flex-1 dark:bg-gray-800 bg-gray-50 dark:text-white shadow appearance-none border border-lahs-blue rounded w-full py-2 px-3  mb-3 leading-tight focus:outline-none focus:shadow-inner;
+	}
+	.search-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.search-section ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
 	.club-container {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
-		flex-wrap: wrap-reverse;
-		align-items: center;
 		width: 100%;
 	}
 

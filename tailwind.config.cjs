@@ -12,6 +12,10 @@ module.exports = {
 			'lahs-blue': '#1565c0',
 			'lahs-blue-hover': '#1d5699'
 		},
+		plugins: [
+			require('@tailwindcss/forms')
+			// ...
+		],
 		screens: {
 			sm: { min: '260', max: '767px' },
 			md: { min: '768px', max: '1023px' },
