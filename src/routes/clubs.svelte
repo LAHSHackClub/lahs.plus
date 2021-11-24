@@ -1,1 +1,0 @@
-<div>List of Clubs</div>
