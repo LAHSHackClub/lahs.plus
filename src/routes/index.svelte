@@ -219,6 +219,9 @@
 			opacity: 1.0;
 		}
 
+		.dropdown-info h6{
+			margin: 0.25em;
+		}
 		.dropbtn {
 			background: linear-gradient(side, #FFFFFF, lahs-blue);
 			white-space: normal;
@@ -245,14 +248,14 @@
 			display: block;
 			}
 	}
-	.element {
-  			display: none;
-		}
+	// .element {
+  	// 		display: none;
+	// 	}
 
-	@media (min-width: 768px) {
-  		.element {
-    	display: block;
-  		}
-	}
+	// @media (min-width: 768px) {
+  	// 	.element {
+    // 	display: block;
+  	// 	}
+	// }
 	
 </style>
