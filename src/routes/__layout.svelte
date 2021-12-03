@@ -10,11 +10,33 @@
 
 <svelte:window on:resize={checkMobile} />
 
-<div class="topnav">
+<main>
 	<NavBar />
-	<slot />
+	<div class="content container">
+		<slot />
+	</div>
 	<Footer />
-</div>
+</main>
 
-<style lang="scss">
+<style lang="scss" global>
+	main {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.container {
+		max-width: 2000px;
+		margin: 0 auto;
+	}
+
+	.content {
+		padding: 1rem;
+		width: 100%;
+		overflow-y: auto;
+	}
 </style>
