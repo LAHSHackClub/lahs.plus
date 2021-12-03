@@ -2,8 +2,6 @@
 <script lang="ts">
 	import DarkToggle from '../components/DarkToggle.svelte';
 	import { NavItems } from '../components/NavItems';
-	import '../tailwind.css';
-	import { mobile } from '../utils/checkMobile';
 	let show = true;
 
 	export let main: HTMLElement;
