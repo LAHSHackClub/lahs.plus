@@ -1,8 +1,8 @@
 
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	export let show: boolean = false;
 	export let main: HTMLElement;
+	export let show: boolean = false;
 </script>
 
 {#if show}

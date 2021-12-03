@@ -22,7 +22,7 @@
 <main on:scroll={updScroll} bind:this={main}>
 	<Nav main={main} />
 	<div class="content container">
-		<NavPrompter main={main} />
+		<NavPrompter show={scrollX > 50} main={main} />
 		<NavCover show={scrollX < 50} main={main} />
 		<slot />
 		<Footer />

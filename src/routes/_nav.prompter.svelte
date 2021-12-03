@@ -1,9 +1,14 @@
 
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	export let main: HTMLElement;
+	export let show: boolean = true;
 </script>
 
-<button class="prompter" on:click={()=>main.scrollBy(-250, 0)}>
+{#if show}
+<button transition:fade="{{duration: 100}}"
+	class="prompter"
+	on:click={()=>main.scrollBy(-250, 0)}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		class="h-6 w-6"
@@ -19,6 +24,7 @@
 		/>
 	</svg>
 </button>
+{/if}
 
 <style lang="scss">
 	.prompter {
