@@ -2,12 +2,13 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	export let main: HTMLElement;
+	export let scroll: number;
 	export let show: boolean = true;
 </script>
 
 {#if show}
 <button transition:fade="{{duration: 100}}"
-	class="prompter"
+	class="prompter" style="top:{scroll + 30}px"
 	on:click={()=>main.scrollBy(-250, 0)}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

@@ -11,9 +11,11 @@
 	});
 
 	let main: HTMLElement;
-	let scrollX = 0;
+	let content: HTMLElement;
+	let scrollX = 0, scrollY = 0;
 	function updScroll() {
 		scrollX = main.scrollLeft;
+		scrollY = content.scrollTop;
 	}
 </script>
 
@@ -21,9 +23,9 @@
 
 <main on:scroll={updScroll} bind:this={main}>
 	<Nav main={main} />
-	<div class="content container">
-		<NavPrompter show={scrollX > 50} main={main} />
-		<NavCover show={scrollX < 50} main={main} />
+	<div class="content container" on:scroll={updScroll} bind:this={content}>
+		<NavPrompter show={scrollX > 50} main={main} scroll={scrollY} />
+		<NavCover show={scrollX < 50} main={main} scroll={scrollY} />
 		<slot />
 		<Footer />
 	</div>
