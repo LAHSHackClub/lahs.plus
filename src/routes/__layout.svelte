@@ -1,7 +1,8 @@
 <script lang="ts">
-	import NavBar from '../components/NavBar.svelte';
+	import Nav from './_nav.svelte';
 	import NavCover from './_nav.scroll-cover.svelte';
 	import Footer from '../components/Footer.svelte';
+
 	import { onMount } from 'svelte';
 	import { checkMobile } from '../utils/checkMobile';
 	onMount(() => {
@@ -9,7 +10,7 @@
 	});
 
 	let main: HTMLElement;
-	$: scrollX = 0;
+	let scrollX = 0;
 	function updScroll() {
 		scrollX = main.scrollLeft;
 	}
@@ -18,7 +19,7 @@
 <svelte:window on:resize={checkMobile} />
 
 <main on:scroll={updScroll} bind:this={main}>
-	<NavBar main={main} />
+	<Nav main={main} />
 	<div class="content container">
 		<NavCover show={scrollX < 50} main={main} />
 		<slot />
