@@ -10,13 +10,15 @@
 	}
 </script>
 
-<nav>
-	<div class="navbar">
+<nav class="navbar">
+	<div class="container">
 		{#each NavItems as item}
 			<a class="navbar-link" href={item.href}> {item.name}</a>
 		{/each}
 		<DarkToggle />
 	</div>
+</nav>
+<nav>
 	<div class="navbar-mobile" id="navbar-mobile">
 		<div class="navbar-mobile-toggle">
 			<button class="navbar-mobile-toggle-icon" on:click={toggleMenu}>
@@ -55,8 +57,8 @@
 	</div>
 </nav>
 
-<!-- 
-	This is going to me trying to make a dropdown menu navbar
- -->
-<style lang="postcss">
+<style lang="scss">
+	.navbar .container {
+		display: flex;
+	}
 </style>
