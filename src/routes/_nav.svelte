@@ -1,13 +1,8 @@
-
 <script lang="ts">
 	import DarkToggle from '../components/DarkToggle.svelte';
 	import { NavItems } from '../components/NavItems';
 	let show = true;
-
 	export let main: HTMLElement;
-	function toggleMenu() {
-		show = !show;
-	}
 </script>
 
 <nav class="navbar">
@@ -21,7 +16,8 @@
 <nav>
 	<div class="navbar-mobile" id="navbar-mobile">
 		<div class="navbar-mobile-toggle">
-			<button class="navbar-mobile-toggle-icon" on:click={toggleMenu}>
+			<DarkToggle />
+			<button class="navbar-mobile-toggle-icon" on:click={() => main.scrollBy(250, 0)}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"
@@ -37,12 +33,13 @@
 					/>
 				</svg>
 			</button>
-			<DarkToggle />
 		</div>
 		{#each NavItems as item}
 			{#if show}
 				<li>
-					<a class="mobile-nav-item" href={item.href} on:click={()=>main.scrollBy(250, 0)}> {item.name}</a>
+					<a class="mobile-nav-item" href={item.href} on:click={() => main.scrollBy(250, 0)}>
+						{item.name}</a
+					>
 				</li>
 			{/if}
 		{/each}
@@ -62,7 +59,7 @@
 		scroll-snap-align: start;
 		scroll-snap-stop: always;
 	}
-	
+
 	.navbar .container {
 		display: flex;
 	}

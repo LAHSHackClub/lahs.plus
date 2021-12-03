@@ -2,7 +2,6 @@
 	import { preferences } from '../utils/store';
 	import { checkMobile, mobile } from '../utils/checkMobile';
 	import DarkMode from '../utils/darkMode.svelte';
-	export let work = false;
 	function iconShift() {
 		checkMobile();
 		let darkButtonReg = document.getElementById('dark-mode-regular');
