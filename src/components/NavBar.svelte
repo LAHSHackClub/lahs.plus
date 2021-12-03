@@ -58,7 +58,16 @@
 </nav>
 
 <style lang="scss">
+	nav {
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+	
 	.navbar .container {
 		display: flex;
+	}
+
+	.navbar-mobile {
+		min-width: 200px;
 	}
 </style>

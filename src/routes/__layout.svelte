@@ -14,24 +14,29 @@
 	<NavBar />
 	<div class="content container">
 		<slot />
+		<Footer />
 	</div>
-	<Footer />
 </main>
 
 <style lang="scss" global>
 	main {
 		display: flex;
-		flex-direction: column;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		overflow-x: auto;
+		width: 100vw;
+
+		@media (min-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	.content {
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
 		padding: 1rem;
-		width: 100%;
+		min-width: 100vw;
+		width: 100vw;
 		overflow-y: auto;
 	}
 </style>
