@@ -1,3 +1,5 @@
+
+import adapter from '@sveltejs/adapter-node';
 import postcss from 'postcss';
 import preprocess from 'svelte-preprocess';
 
@@ -16,7 +18,8 @@ const config = {
 	}),
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		adapter: adapter()
 	}
 };
 
