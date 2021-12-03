@@ -8,7 +8,7 @@
 {#if show}
 <button transition:fade="{{duration: 100}}"
 	class="scroll-cover"
-	on:click="{()=>main.scrollBy(200, 0)}">
+	on:click="{()=>main.scrollBy(250, 0)}">
 	<span>return to content ◀️</span>
 </button>
 {/if}
@@ -36,6 +36,12 @@
 			writing-mode: vertical-rl;
 			transform: scale(-1);
 			text-align: left;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.scroll-cover {
+			display: none;
 		}
 	}
 </style>

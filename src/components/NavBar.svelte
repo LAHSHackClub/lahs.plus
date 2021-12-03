@@ -1,10 +1,12 @@
-<script>
+
+<script lang="ts">
 	import DarkToggle from '../components/DarkToggle.svelte';
 	import { NavItems } from './NavItems';
 	import '../tailwind.css';
 	import { mobile } from '../utils/checkMobile';
 	let show = true;
 
+	export let main: HTMLElement;
 	function toggleMenu() {
 		show = !show;
 	}
@@ -42,7 +44,7 @@
 		{#each NavItems as item}
 			{#if show}
 				<li>
-					<a class="mobile-nav-item" href={item.href}> {item.name}</a>
+					<a class="mobile-nav-item" href={item.href} on:click={()=>main.scrollBy(250, 0)}> {item.name}</a>
 				</li>
 			{/if}
 		{/each}
@@ -68,6 +70,6 @@
 	}
 
 	.navbar-mobile {
-		min-width: 200px;
+		width: 250px;
 	}
 </style>

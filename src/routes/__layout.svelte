@@ -18,9 +18,9 @@
 <svelte:window on:resize={checkMobile} />
 
 <main on:scroll={updScroll} bind:this={main}>
-	<NavBar />
+	<NavBar main={main} />
 	<div class="content container">
-		<NavCover show={scrollX < 30} main={main} />
+		<NavCover show={scrollX < 50} main={main} />
 		<slot />
 		<Footer />
 	</div>
