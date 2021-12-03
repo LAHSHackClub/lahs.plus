@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Nav from './_nav.svelte';
 	import NavCover from './_nav.scroll-cover.svelte';
+	import NavPrompter from './_nav.prompter.svelte';
 	import Footer from '../components/Footer.svelte';
 
 	import { onMount } from 'svelte';
@@ -21,6 +22,7 @@
 <main on:scroll={updScroll} bind:this={main}>
 	<Nav main={main} />
 	<div class="content container">
+		<NavPrompter main={main} />
 		<NavCover show={scrollX < 50} main={main} />
 		<slot />
 		<Footer />
