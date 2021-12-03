@@ -29,11 +29,6 @@
 		bottom: 0;
 	}
 
-	.container {
-		max-width: 2000px;
-		margin: 0 auto;
-	}
-
 	.content {
 		padding: 1rem;
 		width: 100%;
