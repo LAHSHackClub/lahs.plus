@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	export let main: HTMLElement;
@@ -7,11 +6,12 @@
 </script>
 
 {#if show}
-<button transition:fade="{{duration: 100}}"
-	class="scroll-cover" style="top:{scroll}px"
-	on:click="{()=>main.scrollBy(250, 0)}">
-	<span>return to content ◀️</span>
-</button>
+	<button
+		transition:fade={{ duration: 100 }}
+		class="scroll-cover"
+		style="top:{scroll}px"
+		on:click={() => main.scrollBy(250, 0)}
+	/>
 {/if}
 
 <style lang="scss">
