@@ -13,7 +13,8 @@ const clubStore = writable({
 	selectedClubDescription: null
 });
 export const fetchClubs = async (): Promise<Club[]> => {
-	const resp = await fetch('http://localhost:8000/cache/club-info.json');
+	const url = getClubUrl();
+	const resp = await fetch(url);
 	const clubs = await resp.json();
 	const loadedClubs = clubs.map((club, id: number) => {
 		return {
@@ -35,6 +36,7 @@ export const fetchClubs = async (): Promise<Club[]> => {
 
 	return loadedClubs;
 };
+
 export async function fetchClub(id: number): Promise<Club> {
 	const clubs = await fetchClubs();
 	return clubs[id];
@@ -48,3 +50,11 @@ export const getClubById = (id: number): Club => {
 export const getClubId = (clubs: Club[], selectedClub: Club): number => {
 	return clubs.indexOf(selectedClub);
 };
+
+function getClubUrl(): string {
+	if (process.env.NODE_ENV === 'production') {
+		return 'https://db.lahs.club/cache/85bf7ecf9efd4ce5b392a4a16b8d03b7.json';
+	} else {
+		return 'http://localhost:8000/cache/club-info.json';
+	}
+}
