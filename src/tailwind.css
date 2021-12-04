@@ -47,7 +47,7 @@
 		@apply list-none flex-col p-2 m-2;
 	}
 	.navbar-mobile-toggle-icon {
-		@apply p-2 m-2  ease-linear;
+		@apply p-2  mr-auto  ease-linear;
 	}
 	.dark-mode-mobile {
 		@apply p-1 m-2 ease-linear;
