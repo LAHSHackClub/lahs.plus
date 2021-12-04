@@ -1,4 +1,3 @@
-
 import adapter from '@sveltejs/adapter-node';
 import postcss from 'postcss';
 import preprocess from 'svelte-preprocess';
