@@ -19,18 +19,18 @@
 	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5 dark:text-gray-200 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
 }
 .hidden {
-	@apply hidden;
+	display: none;
 }
 
 @media (min-width: 768.1px) {
 	.navbar-mobile {
-		@apply hidden;
+		display: none;
 	}
 	.dark-mode-mobile {
-		@apply hidden;
+		display: none;
 	}
 	.navbar-mobile-toggle {
-		@apply hidden;
+		display: none;
 	}
 	.navbar-link {
 		@apply flex;
@@ -38,10 +38,10 @@
 }
 @media (max-width: 768px) {
 	.navbar {
-		@apply hidden;
+		display: none;
 	}
 	.navbar-link {
-		@apply hidden;
+		display: none;
 	}
 	.navbar-mobile {
 		@apply list-none flex-col p-2 m-2;

@@ -10,7 +10,7 @@ module.exports = {
 	theme: {
 		colors: {
 			white: colors.white,
-			gray: colors.warmGray,
+			gray: colors.stone,
 			'svelte-prime': '#ff5030',
 			'lahs-blue': '#1565c0',
 			'lahs-blue-hover': '#1d5699'
