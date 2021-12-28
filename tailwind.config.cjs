@@ -1,8 +1,6 @@
 const colors = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
-	mode: 'jit',
-	purge: {
+	content: {
 		enabled: process.env.NODE_ENV === 'production',
 		content: ['./src/**/*.svelte', './src/**/*.css']
 	},
@@ -10,15 +8,11 @@ module.exports = {
 	theme: {
 		colors: {
 			white: colors.white,
-			gray: colors.warmGray,
+			gray: colors.stone,
 			'svelte-prime': '#ff5030',
 			'lahs-blue': '#1565c0',
 			'lahs-blue-hover': '#1d5699'
 		},
-		plugins: [
-			require('@tailwindcss/forms')
-			// ...
-		],
 		screens: {
 			sm: { min: '260', max: '767px' },
 			md: { min: '768px', max: '1023px' },
