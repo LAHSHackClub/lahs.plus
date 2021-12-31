@@ -2,7 +2,7 @@
 <script lang="ts">
 	function transformTo(ev: MouseEvent) {
 		const svg = document.querySelector(".map svg") as HTMLElement;
-		const el = ev.target as HTMLElement;
+		const el = ev.target as any;
 		const sR = svg.getBoundingClientRect();
 		const eR = el.getBoundingClientRect();
 
@@ -10,8 +10,10 @@
 		const cY = eR.top - sR.top + eR.height / 2;
 		console.log(cX);
 
-		svg.style.transform = `scale(15)`;
-		svg.style.transformOrigin = `${cX}px ${cY}px`;
+		svg.style.transform = `scale(2)`;
+		setTimeout(() => {
+			el.scrollIntoView();
+		}, 1000);
 	}
 </script>
 
@@ -56,9 +58,15 @@
 		border-radius: 10px;
 		flex: 1 1;
 		overflow: auto;
+		scroll-behavior: smooth;
+		position: relative;
 
 		svg {
 			transition-duration: 1s;
+			transform-origin: top left;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 
