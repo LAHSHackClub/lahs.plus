@@ -45,6 +45,11 @@
 		}
 	}
 
+	.content {
+		flex: 1 1;
+		position: relative;
+	}
+
 	@media (max-width: 768px) {
 		.content {
 			scroll-snap-align: start;
@@ -53,8 +58,6 @@
 			min-width: 100vw;
 			width: 100vw;
 			overflow-y: auto;
-
-			position: relative;
 		}
 	}
 </style>
