@@ -18,8 +18,8 @@ export const fetchClubs = async (): Promise<Club[]> => {
 	const clubs = await resp.json();
 	const loadedClubs = clubs.map((club, id: number) => {
 		return {
-			name: club.Name[0].content,
-			description: club['Club Description'][0].content,
+			name: club.Name,
+			description: club['Club Description'],
 			id: id
 		};
 	});
