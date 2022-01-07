@@ -5,7 +5,12 @@
 
 @layer base {
 	.dark {
-		@apply bg-gray-800 text-white transition-all duration-100 ease-linear;
+		--tw-bg-opacity: 1;
+		color: rgb(255 255 255 / var(--tw-bg-opacity));
+		transition-property: all;
+		transition-duration: 100ms;
+		transition-timing-function: linear;
+		background-color: rgb(41 37 36 / var(--tw-bg-opacity));
 	}
 	.light {
 		@apply bg-white text-gray-800 transition-all duration-100 ease-linear;
