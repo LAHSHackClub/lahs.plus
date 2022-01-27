@@ -12,11 +12,11 @@
 	}
 }
 .navbar {
-	@apply bg-lahs-blue border-gray-200 dark:border-gray-800 shadow-lg p-5 z-0 flex flex-row pb-2 pt-2;
+	@apply bg-lahs-blue border-gray-200 dark:border-gray-800 shadow-lg z-0 flex flex-row p-5 pb-0 pt-0;
 }
 
 .navbar-link {
-	@apply hover:bg-lahs-blue-hover rounded-none  hover:rounded-md text-center hover:shadow-lg p-5 dark:text-gray-200 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
+	@apply hover:bg-lahs-blue-hover rounded-none hover:rounded-md text-center hover:shadow-lg px-4 p-2 dark:text-gray-200 text-white font-semibold hover:text-gray-200 transition-all duration-200 ease-linear;
 }
 .hidden {
 	display: none;
