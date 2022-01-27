@@ -38,19 +38,17 @@
 			{#if show}
 				<li>
 					<a class="mobile-nav-item" href={item.href} on:click={() => main.scrollBy(250, 0)}>
-						{item.name}</a
-					>
+						{item.name}
+					</a>
 				</li>
 			{/if}
 		{/each}
 		<svg
 			class="w-8 h-8 stroke-2 fill-current text-white"
 			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0, 0, 20, 20"
-			><path
-				d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
-			/></svg
-		>
+			viewBox="0, 0, 20, 20">
+			<path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+		</svg>
 	</div>
 </nav>
 
@@ -58,6 +56,57 @@
 	nav {
 		scroll-snap-align: start;
 		scroll-snap-stop: always;
+	}
+
+	.navbar {
+		@apply bg-lahs-blue border-gray-200 dark:border-gray-800 shadow-lg z-0;
+		@apply p-5 pb-0 pt-0;
+		@apply flex flex-row;
+	}
+
+	.navbar-link {
+		@apply rounded-none hover:rounded-md hover:shadow-lg px-4 p-2 hover:bg-lahs-blue-hover;
+		@apply text-center text-white font-semibold hover:text-gray-200 dark:text-gray-200;
+		@apply transition-all duration-200 ease-linear;
+	}
+
+	@media (min-width: 768.1px) {
+		.navbar-mobile {
+			display: none;
+		}
+		.dark-mode-mobile {
+			display: none;
+		}
+		.navbar-mobile-toggle {
+			display: none;
+		}
+		.navbar-link {
+			@apply flex;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.navbar {
+			display: none;
+		}
+		.navbar-link {
+			display: none;
+		}
+		.navbar-mobile {
+			@apply list-none flex-col p-2 m-2;
+		}
+		.navbar-mobile-toggle-icon {
+			@apply p-2  mr-auto  ease-linear;
+		}
+		.dark-mode-mobile {
+			@apply p-1 m-2 ease-linear;
+		}
+		.navbar-mobile-toggle {
+			@apply p-0 m-0 ease-linear;
+		}
+		.mobile-nav-item {
+			@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg text-white px-5 z-0 flex flex-row pb-2 pt-2;
+		}
 	}
 
 	.navbar .container {
