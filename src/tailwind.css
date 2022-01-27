@@ -56,6 +56,6 @@
 		@apply p-0 m-0 ease-linear;
 	}
 	.mobile-nav-item {
-		@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg text-white p-5 z-0 flex flex-row pb-2 pt-2;
+		@apply bg-lahs-blue border-2 border-gray-200 dark:border-gray-800 rounded-lg shadow-lg text-white px-5 z-0 flex flex-row pb-2 pt-2;
 	}
 }

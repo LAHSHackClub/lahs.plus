@@ -45,7 +45,9 @@
 		width: 350px;
 
 		h1 {
-			font-size: 1.5rem;
+			letter-spacing: 1px;
+			font-size: 1.2rem;
+			font-weight: bold;
 			margin: 0;
 			text-transform: uppercase;
 		}

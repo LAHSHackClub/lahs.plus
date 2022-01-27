@@ -40,6 +40,8 @@
 		height: 100vh;
 		width: 100vw;
 
+		font-family: "Poppins", sans-serif;
+
 		@media (min-width: 768px) {
 			flex-direction: column;
 		}
