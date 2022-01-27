@@ -1,5 +1,7 @@
 
 <script lang="ts">
+	import MapSVG from "$lib/MapSVG.svelte";
+	
 	function transformTo(ev: MouseEvent) {
 		const svg = document.querySelector(".map svg") as HTMLElement;
 		const el = ev.target as any;
@@ -19,22 +21,7 @@
 
 <div class="focus-area">
 	<section class="map">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 888.7 932.87">
-			<defs>
-				<style>
-					.a {
-						fill: #c69c6d;
-					}
-					.b {
-						fill: red;
-					}
-				</style>
-			</defs>
-			<rect on:click="{transformTo}" class="a" x="8" y="8" width="437.42" height="437.42" />
-			<rect on:click="{transformTo}" class="a" x="443.28" y="487.45" width="437.42" height="437.42" />
-			<rect on:click="{transformTo}" class="b" x="603.09" y="107.39" width="58.9" height="58.9" />
-			<rect on:click="{transformTo}" class="b" x="359.53" y="723.03" width="58.9" height="58.9" />
-		</svg>
+		<MapSVG></MapSVG>
 	</section>
 	<section class="finder">
 		<h1>Find Landmarks</h1>
