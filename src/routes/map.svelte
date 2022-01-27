@@ -39,7 +39,7 @@
 	}
 
 	.finder {
-		background-color: blue;
+		@apply bg-lahs-blue text-white;
 		border-radius: 10px;
 		padding: 30px;
 		width: 350px;
