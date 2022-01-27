@@ -1,7 +1,6 @@
 <script lang="ts">
 	import DarkToggle from "$lib/DarkToggle.svelte";
 	import { NavItems } from "$lib/NavItems";
-	let show = true;
 	export let main: HTMLElement;
 </script>
 
@@ -23,25 +22,21 @@
 					class="h-6 w-6"
 					fill="none"
 					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
+					stroke="currentColor">
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
 						stroke-width="2"
-						d="M4 6h16M4 12h16M4 18h16"
-					/>
+						d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
 			</button>
 		</div>
 		{#each NavItems as item}
-			{#if show}
-				<li>
-					<a class="mobile-nav-item" href={item.href} on:click={() => main.scrollBy(250, 0)}>
-						{item.name}
-					</a>
-				</li>
-			{/if}
+		<li>
+			<a class="mobile-nav-item" href={item.href} on:click={() => main.scrollBy(250, 0)}>
+				{item.name}
+			</a>
+		</li>
 		{/each}
 	</div>
 </nav>
