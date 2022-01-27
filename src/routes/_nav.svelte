@@ -1,6 +1,6 @@
 <script lang="ts">
-	import DarkToggle from '$lib/DarkToggle.svelte';
-	import { NavItems } from "$lib/NavItems';
+	import DarkToggle from "$lib/DarkToggle.svelte";
+	import { NavItems } from "$lib/NavItems";
 	let show = true;
 	export let main: HTMLElement;
 </script>
