@@ -1,22 +1,6 @@
 
 <script lang="ts">
 	import MapSVG from "$lib/MapSVG.svelte";
-	
-	function transformTo(ev: MouseEvent) {
-		const svg = document.querySelector(".map svg") as HTMLElement;
-		const el = ev.target as any;
-		const sR = svg.getBoundingClientRect();
-		const eR = el.getBoundingClientRect();
-
-		const cX = eR.left - sR.left + eR.width / 2;
-		const cY = eR.top - sR.top + eR.height / 2;
-		console.log(cX);
-
-		svg.style.transform = `scale(2)`;
-		setTimeout(() => {
-			el.scrollIntoView();
-		}, 1000);
-	}
 </script>
 
 <div class="focus-area">
@@ -41,19 +25,16 @@
 	}
 
 	.map {
-		background-color: white;
+		background-color: #fed;
 		border-radius: 10px;
 		flex: 1 1;
+		padding: 10px 0;
 		overflow: auto;
 		scroll-behavior: smooth;
 		position: relative;
 
-		svg {
-			transition-duration: 1s;
-			transform-origin: top left;
-			position: absolute;
-			top: 0;
-			left: 0;
+		> :global(*) {
+			max-height: 100%;
 		}
 	}
 
