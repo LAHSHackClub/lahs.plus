@@ -2,7 +2,7 @@
 	import Nav from './_nav.svelte';
 	import NavCover from './_nav.scroll-cover.svelte';
 	import NavPrompter from './_nav.prompter.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Footer from '$lib/Footer.svelte';
 
 	import { onMount } from 'svelte';
 	import { checkMobile } from '../utils/checkMobile';
@@ -40,9 +40,16 @@
 		height: 100vh;
 		width: 100vw;
 
+		font-family: "Poppins", sans-serif;
+
 		@media (min-width: 768px) {
 			flex-direction: column;
 		}
+	}
+
+	.content {
+		flex: 1 1;
+		position: relative;
 	}
 
 	@media (max-width: 768px) {
@@ -53,8 +60,6 @@
 			min-width: 100vw;
 			width: 100vw;
 			overflow-y: auto;
-
-			position: relative;
 		}
 	}
 </style>
