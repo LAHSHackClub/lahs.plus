@@ -43,12 +43,6 @@
 				</li>
 			{/if}
 		{/each}
-		<svg
-			class="w-8 h-8 stroke-2 fill-current text-white"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0, 0, 20, 20">
-			<path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
-		</svg>
 	</div>
 </nav>
 
@@ -74,9 +68,6 @@
 		.navbar-mobile {
 			display: none;
 		}
-		.dark-mode-mobile {
-			display: none;
-		}
 		.navbar-mobile-toggle {
 			display: none;
 		}
@@ -97,9 +88,6 @@
 		}
 		.navbar-mobile-toggle-icon {
 			@apply p-2  mr-auto  ease-linear;
-		}
-		.dark-mode-mobile {
-			@apply p-1 m-2 ease-linear;
 		}
 		.navbar-mobile-toggle {
 			@apply p-0 m-0 ease-linear;
