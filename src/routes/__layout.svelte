@@ -2,7 +2,7 @@
 	import Nav from './_nav.svelte';
 	import NavCover from './_nav.scroll-cover.svelte';
 	import NavPrompter from './_nav.prompter.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Footer from '$lib/Footer.svelte';
 
 	import { onMount } from 'svelte';
 	import { checkMobile } from '../utils/checkMobile';
