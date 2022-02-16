@@ -1,4 +1,4 @@
-import { get, writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
 
 interface Club {
 	name: string;
@@ -52,9 +52,9 @@ export const getClubId = (clubs: Club[], selectedClub: Club): number => {
 };
 
 function getClubUrl(): string {
-	if (process.env.NODE_ENV === 'production') {
-		return 'https://db.lahs.club/cache/85bf7ecf9efd4ce5b392a4a16b8d03b7.json';
-	} else {
-		return 'http://localhost:8000/cache/club-info.json';
-	}
+	// if (process.env.NODE_ENV === 'production') {
+	// } else {
+	// return 'http://localhost:8000/cache/club-info.json';
+	// }
+	return 'https://db.lahs.club/cache/85bf7ecf9efd4ce5b392a4a16b8d03b7.json';
 }
