@@ -39,8 +39,9 @@
 					{#each results as club}
 						<Club key={club.id} />
 					{/each}
+				{:else}
+					No Clubs Found
 				{/if}
-				No Clubs Found
 			{/await}
 		</ul>
 	</section>
