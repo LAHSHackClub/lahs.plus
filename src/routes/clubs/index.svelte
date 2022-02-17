@@ -7,7 +7,10 @@
 		const clubs = await fetchClubs();
 		return clubs;
 	}
-	let searchClub = $page.query.get('search');
+
+	//let searchClub = $page.url.searchParams.get('search');
+
+	let searchClub = $page.url.searchParams.get('search'); // This fixes a 500 error but type script doesn't like it
 	async function search(query: string) {
 		//Find clubs that match the query then return the id
 		const clubs = await fetchClubs();
@@ -19,7 +22,7 @@
 		}
 		return clubs;
 	}
-	const searchs = search($page.query.get('search')).then((results) => {
+	const searchs = search($page.url.searchParams.get('search')).then((results) => {
 		return results;
 	});
 </script>
@@ -31,10 +34,14 @@
 {#if searchClub !== null || searchClub !== undefined || searchClub !== ''}
 	<section class="search-section">
 		<ul>
-			{#await search($page.query.get('search')) then results}
-				{#each results as club}
-					<Club key={club.id} />
-				{/each}
+			{#await search($page.url.searchParams.get('search')) then results}
+				{#if results.length > 0}
+					{#each results as club}
+						<Club key={club.id} />
+					{/each}
+				{:else}
+					No Clubs Found
+				{/if}
 			{/await}
 		</ul>
 	</section>
